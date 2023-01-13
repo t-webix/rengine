@@ -1,0 +1,49 @@
+{
+	"name": "@xbs/rengine",
+	"version": "1.3.2",
+	"description": "data aggregating engine",
+	"main": "dist/rengine.js",
+	"module": "dist/rengine.es6.js",
+	"types": "dist/types/rengine.d.ts",
+	"author": "Maksim Kozhukh",
+	"license": "SEE LICENSE IN license.txt",
+	"scripts": {
+		"test": "yarn build && yarn mocha test/*.spec.js",
+		"build": "yarn rollup -c rollup.config.js",
+		"lint": "yarn eslint ./src --ext .ts,.js",
+		"dist": "yarn build --config-dist",
+		"watch": "yarn rollup -c rollup.config.js -w"
+	},
+	"files": [
+		"dist"
+	],
+	"devDependencies": {
+		"@rollup/plugin-node-resolve": "^11.1.0",
+		"@rollup/plugin-typescript": "^4.0.0",
+		"@typescript-eslint/eslint-plugin": "^3.2.0",
+		"@typescript-eslint/parser": "^3.2.0",
+		"chai": "^4.2.0",
+		"eslint": "^7.2.0",
+		"eslint-config-prettier": "^6.11.0",
+		"husky": "^4.2.3",
+		"mocha": "^6.2.2",
+		"nyc": "^15.1.0",
+		"prettier": "^1.19.1",
+		"pretty-quick": "^2.0.1",
+		"rollup": "^1.31.0",
+		"rollup-plugin-terser": "^5.2.0",
+		"tslib": "^1.10.0",
+		"typescript": "^3.7.5"
+	},
+	"publishConfig": {
+		"registry": "https://npm.webix.com"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged"
+		}
+	},
+	"dependencies": {
+		"@xbs/pasmat": "^1.0.0"
+	}
+}
